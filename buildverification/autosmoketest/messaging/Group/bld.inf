@@ -1,0 +1,38 @@
+// Copyright (c) 2004-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+// Integration test system build description file for self test suite
+//
+ 
+
+PRJ_TESTEXPORTS
+ 
+ 
+../Scripts/Smoketest_Mess.script					/epoc32/release/wins/udeb/z/autosmoketest/smoketest_mess.script
+../Scripts/Smoketest_Mess.script					/epoc32/release/wins/urel/z/autosmoketest/smoketest_mess.script
+../Scripts/Smoketest_Mess.script					/epoc32/release/winscw/udeb/z/autosmoketest/smoketest_mess.script
+../Scripts/Smoketest_Mess.script					/epoc32/release/winscw/urel/z/autosmoketest/smoketest_mess.script
+
+../TestData/Sms/Message1.txt					/epoc32/release/wins/udeb/z/autosmoketest/sms/message1.txt
+../TestData/Sms/Message1.txt					/epoc32/release/wins/urel/z/autosmoketest/sms/message1.txt
+../TestData/Sms/Message1.txt					/epoc32/release/winscw/udeb/z/autosmoketest/sms/message1.txt
+../TestData/Sms/Message1.txt					/epoc32/release/winscw/urel/z/autosmoketest/sms/message1.txt
+
+../TestData/Smoketest_Mess.ini			   		/epoc32/release/wins/udeb/z/autosmoketest/smoketest_mess.ini
+../TestData/Smoketest_Mess.ini			   		/epoc32/release/wins/urel/z/autosmoketest/smoketest_mess.ini
+../TestData/Smoketest_Mess.ini			   		/epoc32/release/winscw/udeb/z/autosmoketest/smoketest_mess.ini
+../TestData/Smoketest_Mess.ini			   		/epoc32/release/winscw/urel/z/autosmoketest/smoketest_mess.ini
+
+
+PRJ_TESTMMPFILES
+Smoketest_Mess.mmp

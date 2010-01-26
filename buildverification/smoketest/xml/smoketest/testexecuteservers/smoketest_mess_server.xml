@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE testExecuteServer SYSTEM "file:///testdriver/xml/testExecuteServer.dtd" [ ]>
+<testExecuteServer>
+	<name>smoketest_mess_server</name>
+	<mmpFile>smoketest_mess.mmp</mmpFile>
+	<bldInfPath>smoketest\messaging\group\bld.inf</bldInfPath>
+	<dependencies>	
+		<buildable type="test">
+  			<hostPath>smoketest_utils.dll</hostPath> 
+  			<devicePath>c:\system\libs\smoketest_utils.dll</devicePath> 
+  			<mmpFile>smoketest_utils.mmp</mmpFile> 
+  			<bldInfPath>smoketest\utils\group\bld.inf</bldInfPath> 
+  		</buildable>
+		<buildable type="test">
+  			<hostPath>SmokeTestSecureFSclient.dll</hostPath> 
+  			<devicePath>c:\system\libs\SmokeTestSecureFSclient.dll</devicePath> 
+  			<mmpFile>SmokeTestSecureFSclient.mmp</mmpFile> 
+  			<bldInfPath>smoketest\utils\group\bld.inf</bldInfPath> 
+  		</buildable>
+		<buildable type="test">
+  			<hostPath>SmokeTestSecureFSserver.exe</hostPath> 
+  			<devicePath>c:\system\libs\SmokeTestSecureFSserver.exe</devicePath> 
+  			<mmpFile>SmokeTestSecureFSserver.mmp</mmpFile> 
+  			<bldInfPath>smoketest\utils\group\bld.inf</bldInfPath> 
+  		</buildable>
+	</dependencies>  				
+</testExecuteServer>

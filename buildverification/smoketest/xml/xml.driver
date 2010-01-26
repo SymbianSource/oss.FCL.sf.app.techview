@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<driver:driver xmlns:driver="http://www.symbian.com/TestDriver">
+  <task name="xml" timeout="100000">
+    <task name="smoketest">
+      <executeOnPC>
+        <build testBuild="true" URI="${sourceroot}\smoketest\agenda\group\">
+          <componentName>smoketest_agenda</componentName>
+        </build>
+        <build testBuild="true" URI="${sourceroot}\smoketest\contacts\group\">
+          <componentName>smoketest_contacts</componentName>
+        </build>
+        <build testBuild="true" URI="${sourceroot}\smoketest\utils\group\">
+          <componentName>smoketest_utils</componentName>
+          <componentName>smoketestsecurefsclient</componentName>
+          <componentName>smoketestsecurefsserver</componentName>
+        </build>
+        <build testBuild="true" URI="${sourceroot}\smoketest\messaging\group\">
+          <componentName>smoketest_mess</componentName>
+        </build>
+        <build testBuild="true" URI="${sourceroot}\smoketest\timew\consolealarmalertserver\">
+          <componentName>consolealarmalertserver</componentName>
+        </build>
+        <build testBuild="true" URI="${sourceroot}\smoketest\timew\group\">
+          <componentName>smoketest_timew</componentName>
+        </build>
+      </executeOnPC>
+      <task name="smoketest_system" timeout="1000">
+        <executeOnPC>
+          <build testBuild="true" URI="${sourceroot}\smoketest\system\group\">
+            <componentName>smoketest_system</componentName>
+          </build>
+        </executeOnPC>
+        <executeOnSymbian>
+          <testExecuteScript PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_system.script" SymbianPath="c:\smoketest\smoketest_system.script"/>
+        </executeOnSymbian>
+      </task>
+      <task name="smoketest_agenda" timeout="1000">
+        <transferToSymbian>
+          <transfer move="false" PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_agenda.ini" SymbianPath="c:\smoketest\smoketest_agenda.ini"/>
+        </transferToSymbian>
+        <executeOnSymbian>
+          <testExecuteScript PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_agenda.script" SymbianPath="c:\smoketest\smoketest_agenda.script"/>
+        </executeOnSymbian>
+      </task>
+      <task name="smoketest_mess" timeout="1000">
+        <transferToSymbian>
+          <transfer move="false" PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_mess.ini" SymbianPath="c:\smoketest\smoketest_mess.ini"/>
+          <transfer move="false" PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\sms\message1.txt" SymbianPath="c:\smoketest\sms\message1.txt"/>
+          <transfer move="false" PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_createsmsaccount.script" SymbianPath="c:\smoketest\smoketest_createsmsaccount.script"/>
+        </transferToSymbian>
+        <executeOnSymbian>
+          <testExecuteScript PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_mess.script" SymbianPath="c:\smoketest\smoketest_mess.script"/>
+        </executeOnSymbian>
+      </task>
+      <task name="smoketest_timew" timeout="1000">
+        <transferToSymbian>
+          <transfer move="false" PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_timew.ini" SymbianPath="c:\smoketest\smoketest_timew.ini"/>
+        </transferToSymbian>
+        <executeOnSymbian>
+          <testExecuteScript PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_timew.script" SymbianPath="c:\smoketest\smoketest_timew.script"/>
+        </executeOnSymbian>
+      </task>
+      <task name="smoketest_phone" timeout="1000">
+        <executeOnSymbian>
+          <testExecuteScript PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_phone.script" SymbianPath="c:\smoketest\smoketest_phone.script"/>
+        </executeOnSymbian>
+      </task>
+      <task name="smoketest_contacts" timeout="1000">
+        <transferToSymbian>
+          <transfer move="false" PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_contacts.ini" SymbianPath="c:\smoketest\smoketest_contacts.ini"/>
+        </transferToSymbian>
+        <executeOnSymbian>
+          <testExecuteScript PCPath="${epocroot}\epoc32\release\winscw\udeb\z\smoketest\smoketest_contacts.script" SymbianPath="c:\smoketest\smoketest_contacts.script"/>
+        </executeOnSymbian>
+      </task>
+    </task>
+  </task>
+</driver:driver>

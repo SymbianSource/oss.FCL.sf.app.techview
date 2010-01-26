@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE testExecuteTest SYSTEM "file:///testdriver/xml/testExecuteTest.dtd" [ ]>
+<testExecuteTest>
+	<name>smoketest_system</name>
+	<timeout>1000</timeout>
+	<testScripts>	
+		<script>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\smoketest_system.script</hostPath>
+			<devicePath>c:\smoketest\smoketest_system.script</devicePath>
+		</script>
+	</testScripts>
+	<dependencies>	
+		<buildable type="test">
+  			<hostPath>\epoc32\release\winscw\udeb\smoketest_system.exe</hostPath> 
+  			<devicePath>c:\sys\bin\smoketest_system.exe</devicePath> 
+  			<mmpFile>smoketest_system.mmp</mmpFile> 
+  			<bldInfPath>smoketest\system\group\bld.inf</bldInfPath> 
+  		</buildable>
+	</dependencies>  
+</testExecuteTest>

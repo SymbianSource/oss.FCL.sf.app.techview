@@ -1,0 +1,3 @@
+Dummy file. Used at the end of a test run with -p option
+(RUNTESTS z:\dummytest.txt -p)
+in order to reboot the board ready for the next rom.

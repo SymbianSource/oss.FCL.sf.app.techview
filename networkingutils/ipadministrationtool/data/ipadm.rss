@@ -1,0 +1,180 @@
+// Copyright (c) 2004-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+// ipadm.rss - IP adminstration tool resource file
+//
+
+NAME IPAD
+
+#include <techview/eikon.rh>
+
+#include "ipadm.hrh"
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf=""; }
+
+RESOURCE EIK_APP_INFO
+	{
+	menubar=r_IpAdm_menubar;
+	hotkeys=r_IpAdm_hotkeys;
+#ifdef CRYSTAL
+	cba = r_IpAdm_cba;
+#else
+	toolbar=r_IpAdm_toolbar;
+#endif
+	}
+
+#ifdef CRYSTAL
+
+RESOURCE CBA r_IpAdm_cba
+{
+   	buttons = 
+	{
+		CBA_BUTTON
+		{
+			id=EIpAdmInterfaces;
+			txt="Interfaces";
+		},
+		CBA_BUTTON
+		{
+			id=EIpAdmRoutes;
+			txt="Routes";
+		},
+		CBA_BUTTON
+		{
+			id=EEikCmdExit;
+			txt="Exit";
+		}
+	};
+}
+
+#else // not CRYSTAL  (Pre-ER6 and Hurricane)
+
+RESOURCE TOOLBAR r_IpAdm_toolbar
+	{
+	controls=
+		{
+		TBAR_CTRL 
+			{ 
+			id=EIpAdmFilename;
+			type=EEikCtFileNameLabel; 
+			flags=EEikToolBarCtrlHasSetMinLength;
+			length=KEikStdFileNameLabelHeight;
+			},
+		TBAR_BUTTON
+			{
+			flags=EEikToolBarCtrlIsStretchable;
+			id=EIpAdmInterfaces;
+			txt="Interfaces";
+			},
+        TBAR_BUTTON
+			{
+			flags=EEikToolBarCtrlIsStretchable;
+			id=EIpAdmRoutes;
+			txt="Routes";
+			},
+        TBAR_BUTTON
+			{
+			flags=EEikToolBarCtrlIsStretchable;
+			id=EIpAdmAddRoutes;
+			txt="AddRoutes";
+			}
+  		};	
+	}  
+#endif //CRYSTAL
+
+RESOURCE HOTKEYS r_IpAdm_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command=EEikCmdExit; key='e'; }
+        };
+    }
+
+RESOURCE MENU_BAR r_IpAdm_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_IpAdm_file_menu; txt="File"; },
+ 		MENU_TITLE { menu_pane=r_IpAdm_console_menu; txt="Console"; }
+		};
+    }
+
+RESOURCE MENU_PANE r_IpAdm_file_menu
+	{
+	items=
+		{
+		MENU_ITEM { command=EIpAdmInterfaces; txt="Interfaces"; },
+		MENU_ITEM { command=EIpAdmRoutes; txt="Routes"; },
+		MENU_ITEM { command=EIpAdmAddRoutes; txt="Add Routes"; },
+		MENU_ITEM { command=EEikCmdExit; txt="Exit"; }
+        };
+    }
+
+RESOURCE MENU_PANE r_IpAdm_console_menu
+	{
+	items=
+        {
+		MENU_ITEM
+            {
+            command=EIpAdmClearScreen;
+            txt="ClearScreen";
+            },
+        MENU_ITEM
+            {
+            command=EConsolFontDialog;
+            txt="Set font…";
+            },
+		MENU_ITEM
+            {
+            command=EConsolHistoryDialog;
+            txt="History size…";
+			},
+		MENU_ITEM
+            {
+            cascade=r_IpAdm_toolbars_menu;
+           	txt="Toolbars";
+            }
+
+		};
+	}
+
+RESOURCE MENU_PANE r_IpAdm_toolbars_menu
+    {
+    items=
+        {
+        MENU_ITEM
+            {
+            command=EConsolScrollNone;
+            txt="None";
+            },
+        MENU_ITEM
+            {
+            command=EConsolScrollHor;
+            txt="Horiz only";
+            },
+        MENU_ITEM
+            {
+            command=EConsolScrollVert;
+            txt="Vert only";
+            },
+        MENU_ITEM
+            {
+            command=EConsolScrollBoth;
+            txt="Both scrollbars";
+            }
+        };
+    }
+
+RESOURCE TBUF r_busy { buf="Busy…"; }

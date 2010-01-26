@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE testExecuteServer SYSTEM "file:///testdriver/xml/testExecuteServer.dtd" [ ]>
+<testExecuteServer>
+	<name>smoketest_agenda_server</name>
+	<mmpFile>smoketest_agenda.mmp</mmpFile>
+	<bldInfPath>smoketest\agenda\group\bld.inf</bldInfPath>
+</testExecuteServer>
