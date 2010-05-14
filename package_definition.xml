@@ -150,14 +150,12 @@
         <unit bldFile="toolkit/romkit/group" mrp="toolkit/romkit/group/techview_romkit.mrp"/>
       </component>
       <component id="romimages" name="ROM Images" filter="techview" purpose="development">
-        <unit version="tb92" bldFile="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb92sfrom_obys" mrp="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb92sfrom_obys/reference_roms_tb92.mrp"/>
+        <unit version="tb101sf" bldFile="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb101sfrom_obys" mrp="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb101sfrom_obys/reference_roms_tb101sf.mrp"/>
       </component>
       <component id="configfiles" name="Configuration Files" filter="techview" purpose="development">
         <unit mrp="toolkit/configfiles/techview_epoc_ini.mrp"/>
       </component>
-      <component id="cdborphans" name="CDB Orphan File Handler" filter="techview" purpose="development">
-        <unit bldFile="toolkit/cdborphans/group" mrp="toolkit/cdborphans/group/techview_cdb_dummy_orphanheader_checker.mrp"/>
-      </component>
+
     </collection>
     <collection id="techview_info" name="Techview Info" level="apps3">
       <component id="techview_metadata" name="Techview Metadata" class="config" introduced="^2" purpose="development" target="desktop">
