@@ -18,6 +18,5 @@ component           techview_metadata
 source   \sf\app\techview\techview_info\techview_metadata 
 source   \sf\app\techview\package_definition.xml
 source   \sf\app\techview\distribution.policy.s60
-source   \sf\app\techview\package_definition_v2.xml
 notes_source      \component_defs\release.src
 ipr T 
