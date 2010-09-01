@@ -1,0 +1,48 @@
+// Copyright (c) 2004-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+
+#ifndef __SMOKETESTS_IBY__
+#define __SMOKETESTS_IBY__
+
+#include "testexecute.iby"  
+#include "thindump.iby"
+ 
+
+
+file=ABI_DIR\DEBUG_DIR\runtests.exe				\sys\bin\runtests.exe
+file=ABI_DIR\BUILD_DIR\smoketest_agenda_server.exe	\sys\bin\smoketest_agenda_server.exe
+file=ABI_DIR\BUILD_DIR\smoketest_contacts_server.exe	\sys\bin\smoketest_contacts_server.exe
+file=ABI_DIR\BUILD_DIR\smoketest_mess_server.exe	\sys\bin\smoketest_mess_server.exe
+file=ABI_DIR\BUILD_DIR\smoketest_timew_server.exe	\sys\bin\smoketest_timew_server.exe 
+
+//required by messaging tests
+file=ABI_DIR\BUILD_DIR\SmokeTest_Utils.dll	\sys\bin\SmokeTest_Utils.dll
+file=ABI_DIR\BUILD_DIR\testconfigfileparser.dll \bin\testconfigfileparser.dll  
+ 
+
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_agenda.script \autosmoketest\smoketest_agenda.script 
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_agenda.ini \autosmoketest\smoketest_agenda.ini 
+
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_contacts.script \autosmoketest\smoketest_contacts.script 
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_contacts.ini \autosmoketest\smoketest_contacts.ini 
+
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_mess.script \autosmoketest\smoketest_mess.script 
+data = \epoc32\release\winscw\udeb\z\autosmoketest\sms\message1.txt \autosmoketest\sms\message1.txt 
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_mess.ini \autosmoketest\smoketest_mess.ini 
+
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_timew.script \autosmoketest\smoketest_timew.script 
+data = \epoc32\release\winscw\udeb\z\autosmoketest\smoketest_timew.ini \autosmoketest\smoketest_timew.ini 
+ 
+
+#endif

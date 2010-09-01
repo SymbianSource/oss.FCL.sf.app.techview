@@ -1,0 +1,32 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+
+PRINT Run Timew smoketest
+//
+RUN_WS_PROGRAM 10 z:\sys\bin\timew.exe
+//
+DELAY 1500
+//
+LOAD_SUITE Smoketest_Timew_Server
+//
+RUN_UTILS MkDir c:\autoSmoketest\
+
+RUN_UTILS CopyFile z:\autosmoketest\smoketest_timew.ini	c:\autosmoketest\smoketest_timew.ini
+RUN_UTILS MakeReadWrite c:\autosmoketest\smoketest_timew.ini
+//
+START_TESTCASE 8979
+RUN_TEST_STEP 1000	Smoketest_Timew_Server	SetAlarm		c:\autosmoketest\Smoketest_Timew.ini	24560_SetAlarm
+END_TESTCASE 8979

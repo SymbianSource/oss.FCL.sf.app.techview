@@ -1,0 +1,57 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*
+*/
+#ifndef __SMOKETESTS_IBY__
+#define __SMOKETESTS_IBY__
+
+#include "testexecute.iby"  
+
+data = \epoc32\release\winscw\udeb\z\smoketest\autoexec.bat		\autoexec.bat
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketests.bat		\smoketests.bat
+data = \epoc32\release\winscw\udeb\z\smoketest\dummytest.txt	      \dummytest.txt
+ 
+
+
+
+file=ABI_DIR\BUILD_DIR\smoketest_agenda_server.exe	sys\bin\smoketest_agenda_server.exe
+file=ABI_DIR\BUILD_DIR\smoketest_contacts_server.exe	sys\bin\smoketest_contacts_server.exe
+file=ABI_DIR\BUILD_DIR\smoketest_mess_server.exe	sys\bin\smoketest_mess_server.exe
+file=ABI_DIR\BUILD_DIR\smoketest_system.exe	      sys\bin\smoketest_system.exe
+file=ABI_DIR\BUILD_DIR\smoketest_timew_server.exe	sys\bin\smoketest_timew_server.exe
+
+//required by messaging tests
+file=ABI_DIR\BUILD_DIR\SmokeTest_Utils.dll	sys\bin\SmokeTest_Utils.dll
+file=ABI_DIR\BUILD_DIR\testconfigfileparser.dll \bin\testconfigfileparser.dll  
+
+data = \epoc32\release\winscw\udeb\z\smoketest\setup_smoketest_agenda.script \smoketest\setup_smoketest_agenda.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_agenda.script \smoketest\smoketest_agenda.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\setup_smoketest_contacts.script \smoketest\setup_smoketest_contacts.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_contacts.script \smoketest\smoketest_contacts.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_createsmsaccount.script \smoketest\smoketest_createsmsaccount.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\setup_smoketest_mess.script \smoketest\setup_smoketest_mess.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_mess.script \smoketest\smoketest_mess.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\setup_smoketest_timew.script \smoketest\setup_smoketest_timew.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_timew.script \smoketest\smoketest_timew.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_phone.script \smoketest\smoketest_phone.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_syncmlapp.script \smoketest\smoketest_syncmlapp.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_system.script \smoketest\smoketest_system.script 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_agenda.ini \smoketest\smoketest_agenda.ini 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_contacts.ini \smoketest\smoketest_contacts.ini 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_mess.ini \smoketest\smoketest_mess.ini 
+data = \epoc32\release\winscw\udeb\z\smoketest\sms\message1.txt \smoketest\sms\message1.txt 
+data = \epoc32\release\winscw\udeb\z\smoketest\smoketest_timew.ini \smoketest\smoketest_timew.ini 
+
+#endif

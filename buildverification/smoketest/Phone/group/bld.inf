@@ -1,0 +1,27 @@
+// Copyright (c) 2004-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+// For phone app smoketest
+// 
+//
+
+PRJ_EXPORTS
+
+// For testexecute on eka2 emulators
+../scripts/smoketest_phone.script		/epoc32/release/wins/udeb/z/smoketest/smoketest_phone.script
+../scripts/smoketest_phone.script		/epoc32/release/wins/urel/z/smoketest/smoketest_phone.script
+../scripts/smoketest_phone.script		/epoc32/release/winscw/udeb/z/smoketest/smoketest_phone.script
+../scripts/smoketest_phone.script		/epoc32/release/winscw/urel/z/smoketest/smoketest_phone.script
+
+PRJ_MMPFILES
+

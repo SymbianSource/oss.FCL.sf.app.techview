@@ -1,0 +1,12 @@
+SECTION_COMMANDS
+bldmake bldfiles
+abld reallyclean
+abld test reallyclean
+abld build winscw  
+abld test build winscw
+abld build armv5  
+abld test build armv5
+
+SECTION_DIRS
+..\group
+

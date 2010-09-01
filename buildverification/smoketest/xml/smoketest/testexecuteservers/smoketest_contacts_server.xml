@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE testExecuteServer SYSTEM "file:///testdriver/xml/testExecuteServer.dtd" [ ]>
+<testExecuteServer>
+	<name>smoketest_contacts_server</name>
+	<mmpFile>smoketest_contacts.mmp</mmpFile>
+	<bldInfPath>smoketest\contacts\group\bld.inf</bldInfPath>
+</testExecuteServer>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE testExecuteTest SYSTEM "file:///testdriver/xml/testExecuteTest.dtd" [ ]>
+<testExecuteTest>
+	<name>smoketest_timew</name>
+	<timeout>1000</timeout>
+	<testScripts>	
+		<script>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\smoketest_timew.script</hostPath>
+			<devicePath>c:\smoketest\smoketest_timew.script</devicePath>
+		</script>
+	</testScripts>
+	<testServers>
+		<server>smoketest_timew_server</server>
+	</testServers>
+	<dependencies>
+		<data>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\smoketest_timew.ini</hostPath>
+			<devicePath>c:\smoketest\smoketest_timew.ini</devicePath>
+		</data>
+	</dependencies>
+</testExecuteTest>

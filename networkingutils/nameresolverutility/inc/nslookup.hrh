@@ -1,0 +1,37 @@
+// Copyright (c) 2004-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+// nslookup.hrh - nslookup client UI constants
+//
+
+
+
+/**
+ @internalComponent
+*/
+enum TNslookupMenuCommands
+	{
+	ENslookupStart=100,
+	ENslookupStop=101,
+	ENslookupLabel=102,
+	ENslookupHostName=103,
+	ENslookupAbout=104,
+	ENslookupReset=105,
+
+	ENslookupCmdFileName=106,
+	ENslookupQueryType=107,
+	ENslookupShowSource=108,
+
+	// Controls
+	ENslookupAboutText=215
+	};

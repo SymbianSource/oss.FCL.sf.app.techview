@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE testExecuteTest SYSTEM "file:///testdriver/xml/testExecuteTest.dtd" [ ]>
+<testExecuteTest>
+	<name>smoketest_mess</name>
+	<timeout>1000</timeout>
+	<testScripts>	
+                <script>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\smoketest_mess.script</hostPath>
+			<devicePath>c:\smoketest\smoketest_mess.script</devicePath>
+		</script>
+	</testScripts>
+	<testServers>
+		<server>smoketest_mess_server</server>
+	</testServers>
+	<dependencies>
+		<data>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\smoketest_mess.ini</hostPath>
+			<devicePath>c:\smoketest\smoketest_mess.ini</devicePath>
+		</data>
+		<data>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\sms\message1.txt</hostPath>
+			<devicePath>c:\smoketest\sms\message1.txt</devicePath>
+		</data>
+        <data>
+			<hostPath>\epoc32\release\winscw\udeb\z\smoketest\smoketest_createsmsaccount.script</hostPath>
+			<devicePath>c:\smoketest\smoketest_createsmsaccount.script</devicePath>
+		</data>
+                
+	</dependencies>
+</testExecuteTest>

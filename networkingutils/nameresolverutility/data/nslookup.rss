@@ -1,0 +1,249 @@
+
+//	nslookup.rss
+
+// Copyright (c) 2007-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+// SOME PING SPECIFIC STUFF HAS BEEN LEFT IN AS A TEMPLATE FOR
+// IMPLEMENTING SOME ADVANCED NSLOOKUP OPTIONS THAT MAY REQUIRE
+// COMPLEX PANELS! -- msa
+//
+
+
+NAME NAPP
+
+#include <techview/eikon.rh>
+#include <techview/eikon.rsg>
+
+#include "nslookup.hrh"
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf=""; }
+
+RESOURCE EIK_APP_INFO
+	{
+	menubar=r_nslookup_menubar;
+	hotkeys=r_nslookup_hotkeys;
+	toolbar=r_nslookup_toolbar;
+	//cba = r_nslookup_cba;
+	}
+
+
+RESOURCE DIALOG r_nslookup_about	//About Dialog
+	{
+	title="About Nslookup";
+	buttons=R_EIK_BUTTONS_CONTINUE;
+	flags=EEikDialogFlagButtonsBelow;
+	items=
+		{
+		DLG_LINE
+			{
+			type=EEikCtLabel;
+			prompt="";
+			id=ENslookupAboutText;
+			control=LABEL
+				{
+				txt="EPOC32 Nslookup";
+				};				
+			},
+		DLG_LINE
+			{
+			type=EEikCtLabel;
+			prompt="";
+			id=ENslookupAboutText;
+			control=LABEL
+				{
+				txt="By Markku Savela";
+				};				
+			},
+		DLG_LINE
+			{
+			type=EEikCtLabel;
+			prompt="";
+			id=ENslookupAboutText;
+			control=LABEL
+				{
+				txt="July 2001";
+				};				
+			}	
+		};
+	}
+
+
+
+RESOURCE DIALOG r_nslookup_hostname
+	{
+	title="EPOC32 Nslookup";
+	buttons=R_EIK_BUTTONS_CANCEL_OK;
+	flags=EEikDialogFlagWait|EEikDialogFlagButtonsBelow|EEikDialogFlagNotifyEsc;
+	items=
+		{
+		DLG_LINE
+			{
+			type=EEikCtEdwin;
+			prompt="Hostname";
+			id=ENslookupHostName;
+			control=EDWIN
+				{
+					width=15;
+					lines=1;
+					maxlength=80;
+					flags=0;
+				};
+			},
+		DLG_LINE
+			{
+            type=EEikCtChoiceList;
+            prompt="Query Type";
+            id=ENslookupQueryType;
+			control=CHOICELIST
+				{
+				array_id=r_querytype_list;
+				};
+			},
+		DLG_LINE
+			{
+            type=EEikCtCheckBox;
+            prompt="Show source address";
+            id=ENslookupShowSource;
+			}
+		};
+	}
+
+
+RESOURCE ARRAY r_querytype_list
+	{
+	items=
+		{
+		LBUF { txt="Default (GetName)"; },
+		LBUF { txt="Query A"; },
+		LBUF { txt="Query NS"; },
+		LBUF { txt="Query CNAME"; },
+		LBUF { txt="Query WKS"; },
+		LBUF { txt="Query PTR"; },
+		LBUF { txt="Query HINFO"; },
+		LBUF { txt="Query MX"; },
+		LBUF { txt="Query TXT"; },
+		LBUF { txt="Query AAAA"; },
+		LBUF { txt="Query SRV"; },
+		LBUF { txt="Query NAPTR"; },
+		LBUF { txt="Query Any"; },
+		LBUF { txt="Clear Cache"; }
+		};
+	}
+
+
+/*
+RESOURCE CBA r_nslookup_cba
+{
+	//LONG flags=EEikButtonGroupAddToStack;
+	//WORD breadth=80; // !!! make this accessible from LAF
+	//LLINK related_buttons=0;
+   	buttons = 
+	{
+		CBA_BUTTON
+		{
+			id=ENslookupStart;
+			txt="Start";
+		},
+		CBA_BUTTON
+		{
+			id=ENslookupStop;
+			txt="Stop";
+		},
+		CBA_BUTTON
+		{
+			id=EEikCmdExit;
+			txt="Exit";
+		}
+	};
+}
+*/
+
+RESOURCE TOOLBAR r_nslookup_toolbar
+	{
+	flags=EEikToolBarDistributeControlsEvenlyBetweenLines;
+	breadth=KEikStdToolBarWidth+8;
+	controls=
+		{
+		TBAR_CTRL 
+			{ 
+			id=ENslookupCmdFileName;
+			type=EEikCtFileNameLabel; 
+			flags=EEikToolBarCtrlHasSetMinLength;
+			length=KEikStdFileNameLabelHeight;
+			},
+		TBAR_BUTTON
+			{
+			flags=EEikToolBarCtrlIsStretchable;
+			id=ENslookupStart;
+			txt="Start";
+			},
+		TBAR_BUTTON
+			{
+			flags=EEikToolBarCtrlIsStretchable;
+			id=ENslookupStop;
+			txt="Stop";
+			},
+        TBAR_BUTTON
+			{
+			flags=EEikToolBarCtrlIsStretchable;
+			id=EEikCmdExit;
+			txt="Exit";
+			}
+		};
+	}  
+
+RESOURCE HOTKEYS r_nslookup_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command=EEikCmdExit; key='e'; },
+		HOTKEY { command=ENslookupStart; key='s'; },
+		HOTKEY { command=ENslookupStop; key='c'; },
+		HOTKEY { command=ENslookupReset; key='r'; },
+		HOTKEY { command=ENslookupAbout; key='a'; }
+        };
+    }
+
+RESOURCE MENU_BAR r_nslookup_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_nslookup_file_menu; txt="File"; },
+        MENU_TITLE { menu_pane=r_nslookup_tools_menu; txt="Tools"; }
+		};
+    }
+
+RESOURCE MENU_PANE r_nslookup_file_menu
+	{
+	items=
+		{
+		MENU_ITEM { command=EEikCmdExit; txt="Exit"; }
+        };
+    }
+
+RESOURCE MENU_PANE r_nslookup_tools_menu
+	{
+	items=
+		{
+		MENU_ITEM { command=ENslookupStart; txt="Start"; },
+		MENU_ITEM { command=ENslookupStop; txt="Stop"; },
+		MENU_ITEM { command=ENslookupReset; txt="Reset Screen"; },
+		MENU_ITEM { command=ENslookupAbout; txt="About..."; }
+        };
+    }
+
+RESOURCE TBUF r_resolving_name { buf="Resolving name..."; }
+

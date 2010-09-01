@@ -1,0 +1,207 @@
+// Copyright (c) 2004-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+
+#include "ResourceHandlerPlatform.hrh"
+
+#ifdef UIQ
+#define A_NUMBER_EDITOR QIK_NUMBER_EDITOR
+#define EXIKCTNUMBEREDITOR EQikCtNumberEditor
+#define CXIKNUMBEREDITOR CQikNumberEditor
+#define NUMBERVALUE Value
+#define SETNUMBERVALUEL SetValueL
+#define CXIKOPTIONBUTTONLIST CQikVertOptionButtonList
+#define EXIKCTOPTIONBUTLIST EQikCtVertOptionButtonList
+#define OPBUTLIST QIK_VERTOPBUT
+#define ITEMFLAG_USEFULLWIDTH itemflags=EQikDlgItemUseFullWidth;
+#define ITEMFLAG_DENSELYPACKED itemflags=EQikDlgItemDenselyPacked;
+#define ITEMFLAG_NONFOCUSING itemflags = EEikDlgItemNonFocusing;
+#endif
+
+#ifdef TV
+#define A_NUMBER_EDITOR NUMBER_EDITOR
+#define EXIKCTNUMBEREDITOR EEikCtNumberEditor
+#define CXIKNUMBEREDITOR CEikNumberEditor
+#define NUMBERVALUE Number
+#define SETNUMBERVALUEL SetNumber
+#define CXIKOPTIONBUTTONLIST CEikHorOptionButtonList
+#define EXIKCTOPTIONBUTLIST EEikCtHorOptionButList
+#define OPBUTLIST HOROPBUT
+#define LABELITEMFLAGS 
+#define ITEMFLAG_USEFULLWIDTH
+#define ITEMFLAG_DENSELYPACKED
+#define ITEMFLAG_NONFOCUSING
+#endif
+
+#define CXKNAPPLICATION CEikApplication
+#define CXKNDOCUMENT CEikDocument
+#define CXKNAPPUI CEikAppUi
+
+
+
+enum TResourceMenuCommands
+	{
+	EResourceMenu1Item0 = 200,
+	EResourceMenu1Item1,
+	EResourceMenu1Item2,
+	EResourceMenu1Item3,
+	EResourceMenu1Item4,
+	EResourceMenu1Item5,
+	EResourceMenu1Item6,
+	EResourceMenu1Item7,
+	EResourceMenu1Item8,
+	EResourceMenu1Item9,
+	EResourceMenu2Item0 = 300,
+	EResourceMenu2Item1,
+	EResourceMenu2Item2,
+	EResourceMenu3Item0 = 400,
+	EResourceMenu3Item1,
+	EResourceMenu3Item2,
+	EResourceMenu3Item3,
+	EResourceMenu3Item4
+	};
+
+enum TResourceDialogControls
+	{
+	EThreadNumberCtl = 1000,
+	EThreadSystemCtl,
+	EThreadProtectedCtl,
+	EThreadPageGeneral,
+	EThreadPagePriority,
+	EThreadPageOther,
+	EThreadPriorityPrompt,
+	EThreadPriorityButtonCtl,
+	EThreadPriorityText,
+	EThreadSetButtonCtl,
+	EThreadGetButtonCtl,
+	EThreadKillButtonCtl,
+	EThreadLabelTop,
+	EThreadLabelThreadName,//UIQ
+	EThreadLabelProcessName,//UIQ
+	EThreadLabelThreadAndProcessName,//TV
+
+	EProcessNumberCtl = 1100,
+	EProcessPriorityText,
+	EProcessSystemCtl,
+	EProcessProtectedCtl,
+	EProcessPageGeneral,
+	EProcessPagePriority,
+	EProcessPageOther,
+	EProcessPriorityButtonCtl,
+	EProcessGetButtonCtl,
+	EProcessKillButtonCtl,
+	EProcessSetButtonCtl,
+	EProcessLabelTop,
+	EProcessLabelProcessName,
+
+	EDebugSetButtonCtl,
+	EDebugPortCtl = 1200,
+
+	EDebugFileServerCtl,
+	EDebugFATCtl,
+	EDebugLoaderCtl,
+
+	EDebugPagePort,
+	EDebugPageKernel,
+	EDebugPageFiles,
+
+	EDebugFileLabel,
+	EDebugPortLabel,
+	EDebugKernelLabel,
+
+	EDebugKernelKHARDWARE,
+	EDebugKernelKBOOT,
+	EDebugKernelKSERVER,
+	EDebugKernelKMMU,
+	EDebugKernelKSEMAPHORE,
+	EDebugKernelKSCHED,
+	EDebugKernelKPROC,
+	EDebugKernelKEXEC,
+	EDebugKernelKEXECFAST,
+	EDebugKernelKTHREAD,
+	EDebugKernelKDLL,
+	EDebugKernelKLOGON,
+	EDebugKernelKPBUS1,
+	EDebugKernelKPBUS2,
+	EDebugKernelKPBUSDRV,
+	EDebugKernelKPOWER,
+	EDebugKernelKTIMING,
+	EDebugKernelKEVENT,
+	EDebugKernelKMEMTRACE,
+	EDebugKernelKIPC,
+	EDebugKernelKDEBUGGER,
+	EDebugKernelKVIDEO,
+	EDebugKernelKUSB,
+	EDebugKernelKPANIC,
+	
+	ERamLabel1,
+	ERamLabel2,
+	ERamTotal,
+	ERamFree,
+	ERamToLeaveButtonCtl,
+	ERamSetButtonCtl,
+	ERamUndoFillButtonCtl,
+
+	EDriveLabel1,
+	EDriveFormatButtonCtl,
+	EDriveUndoFillButtonCtl,
+	EDriveFillButtonCtl,
+	EDriveChoiceList,
+	EDriveToLeaveButtonCtl,
+
+	EDriveLeave4K,
+	EDriveLeave8K,
+	EDriveLeave16K,
+	EDriveLeave64K,
+	EDriveLeave256K
+	};
+
+enum TThreadPriorities
+	{
+	EThreadPm30_Null,
+	EThreadPm20_MuchLess,
+	EThreadPm10_Less,
+	EThreadP0_Normal,
+	EThreadP10_More,
+	EThreadP20_MuchMore,
+	EThreadP30_RealTime,
+	EThreadP100_AbsoluteVeryLow,
+	EThreadP200_AbsoluteLow,
+	EThreadP300_AbsoluteBackground,
+	EThreadP400_AbsoluteForeground,
+	EThreadP500_AbsoluteHigh,
+	EThreadP_NotStandard
+	};
+
+enum TProcessPriorities
+	{
+	EProcessP150_PriorityLow,
+	EProcessP250_PriorityBackground,
+	EProcessP350_PriorityForeground,
+	EProcessP450_PriorityHigh,
+	EProcessP650_PriorityWindowServer,
+	EProcessP750_PriorityFileServer,
+	EProcessP850_PriorityRealTimeServer,
+	EProcessP950_PrioritySupervisor,
+	EProcessPriorityNotStandard
+	};
+
+enum TRAMToLeave
+	{
+	ERamLeave4K,
+	ERamLeave8K,
+	ERamLeave16K,
+	ERamLeave64K,
+	ERamLeave256K
+	};
