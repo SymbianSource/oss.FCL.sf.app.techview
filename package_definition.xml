@@ -150,7 +150,7 @@
         <unit bldFile="toolkit/romkit/group" mrp="toolkit/romkit/group/techview_romkit.mrp"/>
       </component>
       <component id="romimages" name="ROM Images" filter="techview" purpose="development">
-        <unit version="tb92" bldFile="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb92sfrom_obys" mrp="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb92sfrom_obys/reference_roms_tb92.mrp"/>
+        <unit version="tb92" bldFile="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb92ps1rom_obys" mrp="../../os/deviceplatformrelease/symbianosbld/cedarutils/tb92ps1rom_obys/reference_roms_tb92.mrp"/>
       </component>
       <component id="configfiles" name="Configuration Files" filter="techview" purpose="development">
         <unit mrp="toolkit/configfiles/techview_epoc_ini.mrp"/>
