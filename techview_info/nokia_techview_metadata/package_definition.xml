@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:sf="http://www.symbian.org/system-definition" id-namespace="http://www.nokia.com/schema/drd/system-definition">
+  <package id="sf:techview" name="Techview" levels="services ui utils apps1 apps2 apps3">
+    <collection id="sysvalidation" name="System Validation" level="services">
+      <component id="integtestltsy" name="Integration Test Licensee TSY" filter="systemtest" purpose="development" introduced="^3">
+        <unit bldFile="../../sysvalidation/integtestltsy/group" mrp="../../sysvalidation/integtestltsy/group/integtestltsy.mrp"/>
+      </component>
+      <component id="systemtestos" name="System Test OS" filter="systemtest" purpose="development">
+        <unit version="1" bldFile="../../sysvalidation/systemtestos/Group/tb92sf/Group" mrp="../../sysvalidation/systemtestos/Group/tb92sf/Group/systemtest_os.mrp"/>
+      </component>
+    </collection>
+    <collection id="sf:networkingapps" name="Networking Apps" level="apps1">
+      <component id="wpsconnect" name="WPS Connect" filter="techview,test" purpose="development">
+	  <!--  This does not build properly. Needs to be fixed or removed
+        <unit bldFile="../../networkingapps/wpsconnect/group" mrp="../../networkingapps/wpsconnect/group/techview_wpsconnect.mrp"/>
+		-->
+      </component>
+    </collection>
+    <collection id="sf:techview_info" name="Techview Info" level="apps3">
+      <component id="nokia_techview_metadata" name="Nokia Techview Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="nokia_techview_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
